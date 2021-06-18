@@ -12,6 +12,6 @@
 @font-face {
     font-family: "Consolas";
     src: url("../fonts/Consola-regular.TTF");
-    font-style: italic;
-    font-weight: bold;
+    font-style: normal;
+    font-weight: normal;
 }
