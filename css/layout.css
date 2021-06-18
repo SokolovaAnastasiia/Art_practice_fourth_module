@@ -10,12 +10,9 @@ html, body {
     color: var(--light);
     transition: ease all .5s;
     height: 5000px;
-    /* overflow-y: hidden; */
+    min-width: 375px;
 }
 
-body::-webkit-scrollbar {
-    width: 0;
-}
 
 a {
     color: var(--light);
