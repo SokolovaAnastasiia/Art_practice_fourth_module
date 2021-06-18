@@ -1,1 +1,10 @@
 @import "reset.css";
+@import "layout.css";
+@import "adaptive.css";
+@font-face {
+    font-family: "Consolas";
+    src: url('/fonts/Consola-regular.TTF') format("tff"),
+         url('/fonts/Consola-bold.TTF') format("tff"),
+         url('/fonts/Consola-italic.ttf') format("tff"),
+         url('/fonts/Consola-italic-bold.ttf') format("tff");
+}
