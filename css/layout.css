@@ -13,6 +13,11 @@ html, body {
     min-width: 375px;
 }
 
+body {
+    padding: 2.1em;
+}
+
+/* HEADER */
 
 a {
     color: var(--light);
@@ -64,9 +69,7 @@ a {
     display: block;
 }
 
-body {
-    padding: 2.1em;
-}
+
 
 .header {
     border-top: 1px solid var(--light);
@@ -129,4 +132,22 @@ body {
     cursor: pointer;
     display: none;
     user-select: none;
+}
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    flex-direction: row-reverse;
+    border-top: 1px solid var(--light);
+    padding: 2.1em 0;
+}
+
+.signature {
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.contacts {
+    flex-grow: 2;
 }
