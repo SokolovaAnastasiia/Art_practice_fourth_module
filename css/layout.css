@@ -5,7 +5,7 @@
 
 html, body {
     background-color: var(--dark);
-    font-family: "Consolas";
+    font-family: "Consola";
     font-size: 26px;
     color: var(--light);
     transition: ease all .5s;
