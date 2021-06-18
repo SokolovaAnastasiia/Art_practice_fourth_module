@@ -1,17 +1,28 @@
 @import "reset.css";
 @import "layout.css";
 @import "adaptive.css";
-/* @font-face {
-    font-family: "Consola";
-    src: url('../fonts/Consola-regular.TTF'),
-         url('../fonts/Consola-bold.TTF'),
-         url('../fonts/Consola-italic.ttf'),
-         url('../fonts/Consola-italic-bold.ttf');
-} */
 
 @font-face {
     font-family: "Consolas";
     src: url("../fonts/Consola-regular.TTF");
     font-style: normal;
     font-weight: normal;
+}
+@font-face {
+    font-family: "Consolas";
+    src: url("../fonts/Consola-bold.TTF");
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Consolas";
+    src: url("../fonts/Consola-italic.ttf");
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Consolas";
+    src: url("../fonts/Consola-italic-bold.ttf");
+    font-style: italic;
+    font-weight: bold;
 }
