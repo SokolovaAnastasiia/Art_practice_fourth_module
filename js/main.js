@@ -15,6 +15,7 @@ function showFixedMenu(){
 
 $('.fixed-menu').on('click', function(){
     $('.dropdown-content').css('display','block');
+    alert('helo');
 });
 $('body').not('.fixed-menu').on('click',function(){
     $('.dropdown-content').css('display','none');

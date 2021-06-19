@@ -9,13 +9,10 @@ body {
     font-size: 26px;
     color: var(--light);
     transition: ease all .5s;
-    height: 5000px;
     padding: 2.1em;
-    min-width: 13em;
-    overflow-y: hidden;
 }
 
-/* HEADER */
+/* fixed-menu */
 
 a {
     color: var(--light);
@@ -49,6 +46,7 @@ a {
     height: 1em;
     width: 4.5em;
     padding-right: 0.3em;
+    background-color: var(--dark);
 }
 
 .dropdown-content li:hover {
@@ -67,9 +65,11 @@ a {
     display: block;
 }
 
+/* HEADER */
 
 
 .header {
+    padding: 1em 0;
     border-top: 1px solid var(--light);
     border-bottom: 1px solid var(--light);
     height: 14em;
@@ -79,18 +79,19 @@ a {
 }
 
 .header-title {
-    padding-top: 0.5rem;
     display: inline-block;
-    white-space: pre-wrap;
-    font-size: 0.5em;
-    min-width: 14.2em;
-    
+    width: 50%;
+    height: 50%;
+    background-image: url(../images/logo-ascii.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: ease all .5s;
+
 }
 
 .menu {
     float: right;
     text-align: right;
-    padding-top: 1em;
 }
 
 .menu li {
@@ -112,8 +113,7 @@ a {
 
 .header p {
     position: absolute;
-    bottom: 0;
-    padding-bottom: 1em;
+    bottom: 1em;
 }
 
 
