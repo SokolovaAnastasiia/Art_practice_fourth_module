@@ -125,10 +125,13 @@
 .project {
     display: flex;
     height: 24em;
+    transition: .5s ease-in all;
 }
 
 .project .info {
     flex-basis: 66%;
+    position: relative;
+    padding: 3em 2em;
 }
 
 .project .pattern {
@@ -152,9 +155,29 @@
     background-size: cover;
 }
 
-.project .pattern .info .title .logo {
-    width: 12em;
-    height: 5em;
-    background-image: url('../images/rosmars-logo-white.svg');
+.project .info .title {
+    position: relative;
+}
+
+.project .info .title .logo {
+    width: 14em;
+    height: 3em;
+    background-repeat: no-repeat;
+    background-image: url(../images/rosmars-logo-white.svg);
+    position: absolute;
     background-size: contain;
+}
+
+.project .info .title span {
+    position: absolute;
+    right: 0;
+}
+
+.project .info .description {
+    margin-top: 5em;
+}
+
+.project .info .description-short {
+    display: none;
+    margin-top: 5em;
 }

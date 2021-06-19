@@ -1,3 +1,20 @@
+@media all and (max-width: 1285px) {
+    .project {
+        height: 19.7em;
+    }
+    .project .info {
+        padding: 3em 0em;
+        flex-basis: auto;
+    }
+    .project .info .description {
+        display: none;
+    }
+    .project .info .description-short {
+        display: block;
+        max-width: 30em;
+    }
+}
+
 @media all and (max-width: 1024px) {
     body {
         padding: 1.4em;
