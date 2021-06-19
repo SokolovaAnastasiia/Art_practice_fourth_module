@@ -1,0 +1,131 @@
+@media all and (max-width: 1024px) {
+    body {
+        padding: 1.4em;
+    }
+
+    .footer {
+        flex-direction: row;
+        padding: 1.7em 0;
+    }
+
+    .signature {
+        text-align: right;
+    }
+
+    .qualifying-stage .info {
+        flex-basis: 75%;
+    }
+    .qualifying-stage .info .title {
+        margin-top: 3em;
+    }
+    .qualifying-stage .pattern {
+        flex-basis: 25%;
+        background-size: 335%;
+    }
+    .qualifying-stage {
+        height: 16em;
+    }
+}
+
+
+@media all and (max-width: 900px) {
+    .header {
+        height: 11em;
+    }
+
+    .menu {
+        padding-top: 0,5em;
+    }
+
+    .language {
+        display: none;
+    }
+    .language-short {
+        display: inline;
+    }
+}
+
+@media all and (max-width: 834px) {
+    .message {
+        width: 17em;
+    }
+
+    
+}
+
+@media all and (max-width: 700px) {
+    body {
+        padding: 0.7em;
+    }
+    .fixed-menu {
+        right: 0.7em;
+        font-size: 0.7em;
+    }
+
+    .header {
+        height: 8.4em;
+    }
+
+    .header p, .menu li {
+        font-size: 0.7em;
+    }
+
+    .footer {
+        display: block;
+        padding: 1.5em 0 1em;
+        font-size: 0.7em;
+    }
+
+    .signature {
+        text-align: left;
+        padding-top: 1em;
+    }
+    .qualifying-stage .info {
+        font-size: 0.7em;
+    }
+
+    .qualifying-stage {
+        height: 11.5em;
+    }
+
+}
+
+@media all and (max-width: 520px) {
+    .menu {
+        display: none;
+    }
+    .fixed-menu {
+        display: block;
+        top: 1em;
+    }
+    .header-title {
+        width: 100%;
+    }
+
+    .qualifying-stage .info {
+        flex-basis: 100%;
+        background-image: url(../images/test-mobile.svg);
+        background-size: 46%;
+        background-repeat: no-repeat;
+        background-position: right top;
+    }
+
+    .qualifying-stage .pattern {
+        display: none;
+    }
+
+    .qualifying-stage .info .time {
+        display: none;
+    }
+
+    .qualifying-stage .info .time-mobile {
+        display: block;
+    }
+    
+}
+
+@media all and (max-width: 375px) {
+    .header {
+        height: 6.4em;
+    }
+}
