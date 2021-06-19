@@ -3,18 +3,16 @@
     --light: #EAEAEA;
   }
 
-html, body {
+body {
     background-color: var(--dark);
     font-family: "Consolas";
     font-size: 26px;
     color: var(--light);
     transition: ease all .5s;
     height: 5000px;
-    min-width: 375px;
-}
-
-body {
     padding: 2.1em;
+    min-width: 13em;
+    overflow-y: hidden;
 }
 
 /* HEADER */
@@ -85,6 +83,8 @@ a {
     display: inline-block;
     white-space: pre-wrap;
     font-size: 0.5em;
+    min-width: 14.2em;
+    
 }
 
 .menu {
@@ -141,6 +141,7 @@ a {
     flex-direction: row-reverse;
     border-top: 1px solid var(--light);
     padding: 2.1em 0;
+    transition: ease all .5s;
 }
 
 .signature {
