@@ -38,6 +38,7 @@
 .qualifying-stage .info a {
     position: absolute;
     bottom: 1em;
+    font-style: italic;
 }
 
 .qualifying-stage .pattern {
@@ -51,6 +52,7 @@
 
 .news-block {
     display: flex;
+    /* display: none; */
     height: 18.2em;
     border-top: 1px solid var(--light);
     border-bottom: 1px solid var(--light);
@@ -60,7 +62,7 @@
     flex-basis: 8.8em;
     background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
     background-position: right;
-    background-size: 0.08em 1em;
+    background-size: 0.07em 1.1em;
     background-repeat: repeat-y;
     position: relative;
 }
@@ -92,35 +94,159 @@
 .news-block .news .news-cards {
     height: 87%;
     overflow-x: auto;
-    white-space: nowrap;
     position: absolute;
     top: 2.4em;
     right: 0;
     left: 0;
-    overflow-y: hidden;
+    display: flex;
+    background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
+    background-position: right;
+    background-size: 0.07em 1.1em;
+    background-repeat: repeat-y;
 }
 
 .news-block .news .news-cards div{
-    display: inline-block;
-    width: 18em;
     height: 100%;
-    margin-right: 0;
-    border: green 1px solid;
+    min-width: 17.5em;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
+    background-position: right;
+    background-size: 0.07em 1.1em;
+    background-repeat: repeat-y;
+}
+
+.news-block .news .news-cards div .news-title {
+    font-weight: bold;
+}
+
+.news-block .news .news-cards div .readmore {
+    font-style: italic;
+    font-weight: bold;
 }
 
 .news-cards::-webkit-scrollbar {
     height: 1.5em;
+    width: 1.5em;
 }
  
 .news-cards::-webkit-scrollbar-track {
-    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-    border: 2px solid var(--light);
     background-color: var(--dark);
+    border: 2px solid var(--light);
 }
  
 .news-cards::-webkit-scrollbar-thumb {
   background-color: var(--light);
 }
+
+/* .news-block-mobile */
+
+.news-block-mobile {
+    display: none;
+    height: 26em;
+    border-top: 1px solid var(--light);
+    border-bottom: 1px solid var(--light);
+}
+
+.news-block-mobile .pattern {
+    flex-basis: 25%;
+    background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
+    background-position: right;
+    background-size: 0.09em 1.1em;
+    background-repeat: repeat-y;
+    position: relative;
+}
+
+.news-block-mobile .pattern:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/sote-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.news-block-mobile .news {
+    flex-basis: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-block-mobile .news-cards {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.news-block-mobile .news-cards > div {
+    min-height: 9em;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--light);
+}
+
+.news-block-mobile .news .title {
+    background-color: var(--light);
+    color: var(--dark);
+    font-weight: bold;
+    padding: 0.7em 1em;
+}
+
+.news-block-mobile .news .news-cards div .news-title {
+    font-weight: bold;
+}
+
+.news-block-mobile .news .news-cards div .readmore {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.news-block-mobile .news .news-cards .p-container {
+    height: 3em;
+    overflow: hidden;
+}
+
+
+
+.news-cards-mobile::-webkit-scrollbar {
+    height: 1.5em;
+    width: 1.5em;
+}
+ 
+.news-cards-mobile::-webkit-scrollbar-track {
+    background-color: var(--dark);
+    border-left: 2px solid var(--light);
+    border-right: 2px solid var(--light);
+}
+ 
+.news-cards-mobile::-webkit-scrollbar-thumb {
+  background-color: var(--light);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* project block */
 
 .project {
     display: flex;
