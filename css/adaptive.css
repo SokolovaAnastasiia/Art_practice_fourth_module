@@ -46,6 +46,10 @@
         height: 16em;
     }
 
+    .test{
+        height: 30em;
+    }
+
     .news-block {
         display: none;
     }
@@ -54,10 +58,17 @@
     }
 }
 
-
 @media all and (max-width: 900px) {
     .header {
         height: 11em;
+    }
+    .short-header {
+        height: auto;
+    }
+    
+
+    .short-header .header-title {
+        height: 4em;
     }
 
     .menu {
@@ -102,6 +113,15 @@
         font-size: 0.7em;
     }
 
+    .short-header {
+        height: auto;
+    }
+
+    .short-header .header-title {
+        height: 3em;
+    }
+    
+
     .footer {
         display: block;
         padding: 1.5em 0 1em;
@@ -118,6 +138,13 @@
 
     .qualifying-stage {
         height: 11.5em;
+    }
+
+    .test{
+        height: 14em;
+    }
+    .test .info .title {
+        margin-top: 1em;
     }
 
     .news-block-mobile {
@@ -241,5 +268,9 @@
 @media all and (max-width: 375px) {
     .header {
         height: 6.4em;
+    }
+
+    .short-header {
+        height: 4.4em;
     }
 }

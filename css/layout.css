@@ -78,6 +78,11 @@ a {
     transition: ease all .5s;
 }
 
+.short-header {
+    height: auto;
+    box-sizing: border-box;
+}
+
 .header-title {
     display: inline-block;
     width: 50%;
@@ -87,6 +92,10 @@ a {
     background-size: contain;
     transition: ease all .5s;
 
+}
+
+.short-header .header-title {
+    height: 4em;
 }
 
 .menu {
@@ -132,6 +141,10 @@ a {
     cursor: pointer;
     display: none;
     user-select: none;
+}
+
+.short-header .message, .short-header .language, .short-header .language-short {
+    display: none;
 }
 
 /* FOOTER */
