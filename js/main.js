@@ -69,6 +69,7 @@ $(document).ready(function(){
 
         switch (a) {
             case 'index.html':
+            case '':
                 indexChangeLanguage();
                 break;
             case 'mission.html':
