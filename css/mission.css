@@ -1,0 +1,239 @@
+.mission {
+    display: flex;
+    
+}
+
+.mission .info {
+    flex-basis: 70%;
+    padding: 1em 0;
+    position: relative;
+    transition: ease all .5s;
+}
+
+
+.mission .info .title {
+    margin-top: 1em;
+    background-color: var(--light);
+    color: var(--dark);
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.1em 0.2em;
+}
+
+.mission .info .description {
+    margin-right: 1em;
+    margin-top: 1em;
+}
+
+
+.mission .pattern {
+    flex-grow: 1;
+    background-image: url('../images/mission-pattern.svg');
+    background-size: contain;
+    background-position:bottom right;
+    position: relative;
+}
+
+.mission .pattern:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
+    background-position: left;
+    background-size: 0.07em 1.1em;
+    background-repeat: repeat-y;
+}
+
+.stages {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 1em 1em 0em;
+    height: 18em;
+}
+
+.stage {
+    display: flex;
+    flex-direction: column;
+}
+
+.stage .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.stage .empty-space {
+    flex-grow: 1;
+}
+
+.stage .text span {
+    margin-bottom: 1em;
+}
+
+#stage1 {
+    flex-basis: 25%;
+}
+
+#stage2 {
+    flex-basis: 50%;
+}
+#stage3 {
+    flex-basis: 75%;
+}
+
+#stage4 {
+    flex-basis: 100%;
+}
+
+
+.simulator, .tour {
+    display: flex;
+    height: 13em;
+    border-top: 1px solid var(--light);
+    border-bottom: 1px solid var(--light);
+    
+    
+}
+
+
+.tour {
+    flex-direction: row-reverse;
+}
+
+.simulator .pattern, .tour .pattern {
+    flex-grow: 1;
+    background-size: contain;
+    background-position:bottom right;
+}
+.simulator .pattern {
+    background-image: url('../images/simulator-pattern.svg');
+}
+.tour .pattern {
+    background-image: url('../images/tour-pattern.svg');
+}
+
+.simulator .info {
+    background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
+    background-position: left;
+    background-size: 0.07em 1.1em;
+    background-repeat: repeat-y;
+    transition: .5s ease all;
+}
+
+.tour .info {
+    background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
+    background-position: right;
+    background-size: 0.07em 1.1em;
+    background-repeat: repeat-y;
+}
+
+.simulator .info .title, .tour .info .title {
+    background-color: var(--light);
+    color: var(--dark);
+    font-weight: bold;
+    padding: 0.7em 1em;
+}
+
+.simulator .info .information, .tour .info .information {
+    padding: 2.5em 1em;
+}
+
+.simulator .info .information p, .tour .info .information p{
+    margin-bottom: 1em;
+}
+
+
+
+.simulator .info, .tour .info {
+    flex-basis: 50%;
+}
+
+@media all and (max-width: 1024px) {
+    .simulator .info, .tour .info {
+        flex-basis: 75%;
+    }
+    .simulator {
+        flex-direction: row-reverse;
+    }
+    .tour {
+        flex-direction: row;
+    }
+
+    .tour .info {
+        background-position: left;
+    }
+    .simulator .info {
+        background-position: right;
+    }
+    .simulator .pattern, .tour .pattern {
+        background-size: 226%;
+        background-position: left top;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .simulator, .tour {
+        height: auto;
+    }
+    .simulator .info .information, .tour .info .information {
+        padding: 1.5em 0em;
+    }
+    .simulator .info, .tour .info {
+        font-size: 0.7em;
+        flex-basis: 100%;
+        background-image: none;
+    }
+    .simulator .pattern, .tour .pattern {
+        display: none;
+    }
+    .simulator .info .information p, .tour .info .information p {
+        margin-bottom: 1em;
+        max-width: 23em;
+    }
+}
+
+
+@media all and (max-width: 580px) {
+    .stages {
+        height: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border: 1px solid var(--light);
+        margin: 1em 0em -1em 0em;
+    }
+    .stage {
+        padding: 1em;
+        min-width: 8em;
+        background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
+        background-position: right;
+        background-size: 0.07em 1.1em;
+        background-repeat: repeat-y;
+    }
+
+
+    .stage .empty-space {
+        display: none;
+    }
+    #stage1, #stage2, #stage3, #stage4 {
+        flex-basis: auto;
+    }
+
+
+    
+    .stages::-webkit-scrollbar {
+        height: 1.5em;
+        width: 1.5em;
+    }
+    
+    .stages::-webkit-scrollbar-track {
+        background-color: var(--dark);
+        border: 1px solid var(--light);
+    }
+    
+    .stages::-webkit-scrollbar-thumb {
+    background-color: var(--light);
+    }
+}

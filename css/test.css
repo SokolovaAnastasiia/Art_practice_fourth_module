@@ -8,17 +8,6 @@
     padding: 1em 0;
     position: relative;
 }
-
-.qualifying-stage .info .time {
-    display: block;
-    font-weight: bold;
-    width: 100%;
-}
-
-.qualifying-stage .info .time-mobile {
-    display: none;
-}
-
 .qualifying-stage .info .title {
     margin-top: 4em;
     background-color: var(--light);
