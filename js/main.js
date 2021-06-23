@@ -59,6 +59,26 @@ $(document).ready(function(){
     console.log(location.pathname.split('/').slice(-1)[0]);
     console.log(typeof(location.pathname.split('/').slice(-1)[0]));
 
+    let a = location.pathname.split('/').slice(-1)[0];
+    if (sessionStorage.getItem("language") == 'english') {
+
+        $('.menu li:first-child a').html('MAIN');
+        $('.menu li:nth-child(2) a').html('MISSION');
+        $('.menu li:nth-child(3) a').html('CAREER');
+        $('.menu li:last-child a').html('SHOP');
+
+        switch (a) {
+            case 'index.html':
+                indexChangeLanguage();
+                break;
+            case 'mission.html':
+                missionChangeLanguage();
+                break;
+            default:
+                break;
+            }
+    }
+
     $( ".language" ).click(function() {
         if (sessionStorage.getItem("language") == 'russian' || sessionStorage.getItem("language") == null) {
             sessionStorage.setItem("language","english");
@@ -81,25 +101,7 @@ $(document).ready(function(){
         }
     });
     
-    let a = location.pathname.split('/').slice(-1)[0];
-    if (sessionStorage.getItem("language") == 'english') {
-
-        $('.menu li:first-child a').html('MAIN');
-        $('.menu li:nth-child(2) a').html('MISSION');
-        $('.menu li:nth-child(3) a').html('CAREER');
-        $('.menu li:last-child a').html('SHOP');
-
-        switch (a) {
-            case 'index.html':
-                indexChangeLanguage();
-                break;
-            case 'mission.html':
-                missionChangeLanguage();
-                break;
-            default:
-                break;
-            }
-    }
+    
     
 
     function missionChangeLanguage(){
