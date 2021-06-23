@@ -1,0 +1,72 @@
+.male {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.item {
+    /* flex-basis: calc(100%/3); */
+    flex-basis: 33%;
+    height: 20em;
+    position: relative;
+    border-top: 1px solid var(--light);
+    border-bottom: 1px solid var(--light);
+    background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
+    background-position: right;
+    background-size: 0.07em 1.1em;
+    background-repeat: repeat-y;
+}
+
+.item:last-child {
+    background-image: none;
+}
+
+.item .info {
+    position: absolute;
+    bottom: 0.5em;
+    left: 0.5em;
+    opacity: 1;
+    transition: 0.2s ease all;
+}
+
+.item .title {
+    position: absolute;
+    color: var(--dark);
+    height: 2em;
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: bold;
+    background-color: var(--light);
+    z-index: 2;
+    padding: 0.5em 1em;
+}
+
+
+.item .info .name {
+    display: block;
+    margin-bottom: .7em;
+}
+
+.item .info .cost {
+    background-color: var(--light);
+    color: var(--dark);
+    padding: 0.1em 0.4em;
+    font-weight: bold;
+}
+
+#item-pattern {
+    background-image: url('../images/shop-pattern1.svg');
+    background-size: contain;
+    background-position: top left;
+}
+
+.item:hover {
+    background-image: url('../images/hoody.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.item:hover .info{
+    opacity: 0;
+}
