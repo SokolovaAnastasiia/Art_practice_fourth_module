@@ -75,7 +75,7 @@ $(document).ready(function(){
             location.reload();
         }
         else {
-            localStorage.setItem("language","russian");
+            sessionStorage.setItem("language","russian");
             location.reload();
         }
     });
