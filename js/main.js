@@ -57,6 +57,7 @@ $(document).ready(function(){
 
     console.log(sessionStorage.getItem("language"));
     console.log(location.pathname.split('/').slice(-1)[0]);
+    console.log(typeof(location.pathname.split('/').slice(-1)[0]));
 
     $( ".language" ).click(function() {
         if (sessionStorage.getItem("language") == 'russian' || sessionStorage.getItem("language") == null) {
@@ -82,6 +83,12 @@ $(document).ready(function(){
     
     let a = location.pathname.split('/').slice(-1)[0];
     if (sessionStorage.getItem("language") == 'english') {
+
+        $('.menu li:first-child a').html('MAIN');
+        $('.menu li:nth-child(2) a').html('MISSION');
+        $('.menu li:nth-child(3) a').html('CAREER');
+        $('.menu li:last-child a').html('SHOP');
+
         switch (a) {
             case 'index.html':
                 indexChangeLanguage();
@@ -96,14 +103,19 @@ $(document).ready(function(){
     
 
     function missionChangeLanguage(){
+        $('.menu li:nth-child(2) a').html('> MISSION');
         $('.mission .title').html('First colony at Mars');
         $('.mission .info .description').html('In 2041, the first manned flight to Mars is planned with the aim of creating an autonomous viable colony.');
     }
 
     function indexChangeLanguage() {
+        
+
         $('.language').html('Русский');
         $('.language-short').html('Рус');
         $('.header .message').html('We fly to Mars and look for good people with us');
+        
+        
 
         $('.qualifying-stage .title').html('FIRST QUALIFICATION STAGE');
         $('.qualifying-stage .info .description').html('Online testing to determine the ability to think analytically. Registration is available until March 20.');
