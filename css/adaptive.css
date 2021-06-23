@@ -147,6 +147,14 @@
         margin-top: 1em;
     }
 
+    .terminal .prompt {
+        font-size: 0.7em;
+    }
+    
+    .terminal::-webkit-scrollbar {
+        width: 0.8em;
+    }
+
     .news-block-mobile {
         display: flex;
         flex-direction: column;

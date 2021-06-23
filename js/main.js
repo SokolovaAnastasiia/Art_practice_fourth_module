@@ -39,20 +39,24 @@ $(document).ready(function(){
     // }
     $( ".test a" ).click(function() {
         $('.test').css('display','none');
+        $('.test-terminal').css('display','block');
     });
     
 
 
 
 
-
-    let questionNumber = 1;
+    let questionNumber = 0;
     let inputReady = true;
+    let score = 0;
     let input = $('.404-input');
+    let mail = false;
     input.focus();
     $('.container').on('click', function(e){
         input.focus();
     });
+
+
 
     input.on('keyup', function(e){
         $('.new-output').text(input.val());
@@ -60,35 +64,79 @@ $(document).ready(function(){
     });
 
     
+    $( ".test a" ).click(function() {
+        input.focus();
+    });
 
     $('.four-oh-four-form').on('submit', function(e){
         e.preventDefault();
         let val = $(this).children($('.404-input')).val().toLowerCase();
 
-        if (val === 'y' || val === 'n'){
-            newQuestion(val);
-        }else {
-            resetForm();
+        if (questionNumber < 10) {
+            if (val === 'y' || val === 'n'){
+                newQuestion(val);
+            }else {
+                resetForm();
+            }
         }
+        else {
+            let result ='';
+            if (mail == false) {
+                result = 'Ваш результат ' + score + ' из 10.';
+                if (score < 5) {
+                    result += ' Тест не пройден.'
+                }
+                else {
+                    result += ' Тест пройден. Введите вашу почту, чтобы мы могли прислать вам сертификат.'
+                }
+                mail = true;
+            }
+            else {
+                result = 'Спасибо за участие!';
+            }
+            $('.new-output').removeClass('new-output');
+            $('.404-input').val('');
+            $('.terminal').append('<p class="prompt">' + result + '</p><p class="prompt output new-output"></p>');
+            return;
+        }
+        
     });
 
     function newQuestion(val){
-        let message;
-        let correctAnswers = ['y','n','y','y'];
+        let message ='';
+        questionNumber++;
+        let correctAnswers = ['y','n','y','y','y','y','y','n','y','n'];
         let ansver = val;
         if (ansver == correctAnswers[(questionNumber-1)]) {
-            message = "Правильный ответ. Следующий вопрос номер: "
+            message += "Правильный ответ."
+            score++;
         }
         else {
-            message = "Неправильный ответ. Следующий вопрос номер: "
+            message += "Неправильный ответ."
         }
         let input = $('.404-input');
-        questionNumber++;
-        message = message + questionNumber;
+        
+
+        let questionsText = [
+            '<p class="prompt">Вопрос 1/10<br>Текст вопроса</p>',
+            '<p class="prompt">Вопрос 2/10<br>Текст вопроса</p>',
+            '<p class="prompt">Вопрос 3/10<br>Текст вопроса</p>',
+            '<p class="prompt">Вопрос 4/10<br>Текст вопроса</p>',
+            '<p class="prompt">Вопрос 5/10<br>Текст вопроса</p>',
+            '<p class="prompt">Вопрос 6/10<br>Текст вопроса</p>',
+            '<p class="prompt">Вопрос 7/10<br>Текст вопроса</p>',
+            '<p class="prompt">Вопрос 8/10<br>Текст вопроса</p>',
+            '<p class="prompt">Вопрос 9/10<br>Текст вопроса</p>',
+            '<p class="prompt">Вопрос 10/10<br>Текст вопроса</p>',
+            ' Узнать результат?'
+        ];
+
+        message = message + questionsText[(questionNumber)];
 
         $('.new-output').removeClass('new-output');
         input.val('');
         $('.terminal').append('<p class="prompt">' + message + '</p><p class="prompt output new-output"></p>');
+
     }
 
     function resetForm(){
