@@ -84,6 +84,7 @@ $(document).ready(function(){
     if (sessionStorage.getItem("language") == 'english') {
         switch (a) {
             case 'index.html':
+            case '':
                 indexChangeLanguage();
                 break;
             case 'mission.html':
