@@ -90,7 +90,7 @@ $(document).ready(function(){
                 missionChangeLanguage();
                 break;
             default:
-                indexChangeLanguage();
+                break;
             }
     }
     
