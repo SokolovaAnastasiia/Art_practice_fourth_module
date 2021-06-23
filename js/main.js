@@ -59,7 +59,8 @@ $(document).ready(function(){
     console.log(location.pathname.split('/').slice(-1)[0]);
     console.log(typeof(location.pathname.split('/').slice(-1)[0]));
 
-    let a = location.pathname.split('/').slice(-1)[0];
+    let a = '';
+    a += location.pathname.split('/').slice(-1)[0];
     if (sessionStorage.getItem("language") == 'english') {
 
         $('.menu li:first-child a').html('MAIN');
@@ -76,7 +77,7 @@ $(document).ready(function(){
                 missionChangeLanguage();
                 break;
             default:
-                break;
+                indexChangeLanguage();
             }
     }
 
