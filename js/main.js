@@ -14,6 +14,64 @@
 
 
 $(document).ready(function(){
+
+    // localStorage.setItem("language","russian");
+    console.log(localStorage.getItem("language"));
+    console.log(location.pathname.split('/').slice(-1)[0]);
+
+    $( ".language" ).click(function() {
+        if (localStorage.getItem("language") == 'russian' || localStorage.getItem("language") == null) {
+            localStorage.setItem("language","english");
+            location.reload();
+        }
+        else {
+            localStorage.setItem("language","russian");
+            location.reload();
+        }
+    });
+
+    $( ".language-short" ).click(function() {
+        if (localStorage.getItem("language") == 'russian' || localStorage.getItem("language") == null) {
+            localStorage.setItem("language","english");
+            location.reload();
+        }
+        else {
+            localStorage.setItem("language","russian");
+            location.reload();
+        }
+    });
+    
+    let a = location.pathname.split('/').slice(-1)[0];
+    if (localStorage.getItem("language") == 'english') {
+        switch (a) {
+            case 'index.html':
+                indexChangeLanguage();
+                break;
+            case 'mission.html':
+                missionChangeLanguage();
+                break;
+            default:
+                
+            }
+    }
+    
+
+    function missionChangeLanguage(){
+        $('.mission .title').html('First colony at Mars');
+        $('.mission .info .description').html('In 2041, the first manned flight to Mars is planned with the aim of creating an autonomous viable colony.');
+    }
+
+    function indexChangeLanguage() {
+        $('.language').html('Русский');
+        $('.language-short').html('Рус');
+        $('.header .message').html('We fly to Mars and look for good people with us');
+
+        $('.qualifying-stage .title').html('FIRST QUALIFICATION STAGE');
+        $('.qualifying-stage .info .description').html('Online testing to determine the ability to think analytically. Registration is available until March 20.');
+        $('.qualifying-stage .info a').html('Participate <span style="font-style:normal;">[Yes/No]</span>');
+    }
+
+
     $(document).scroll(function() {
         showFixedMenu();
       });
@@ -68,7 +126,17 @@ $(document).ready(function(){
         input.focus();
     });
 
+
+
     $('.four-oh-four-form').on('submit', function(e){
+
+
+        $('#terminal').stop().animate({
+            scrollTop: $('#terminal')[0].scrollHeight
+          }, 800);
+
+
+
         e.preventDefault();
         let val = $(this).children($('.404-input')).val().toLowerCase();
 
