@@ -16,23 +16,62 @@
 $(document).ready(function(){
 
     // localStorage.setItem("language","russian");
-    console.log(localStorage.getItem("language"));
+    // console.log(localStorage.getItem("language"));
+    // console.log(location.pathname.split('/').slice(-1)[0]);
+
+    // $( ".language" ).click(function() {
+    //     if (localStorage.getItem("language") == 'russian' || localStorage.getItem("language") == null) {
+    //         localStorage.setItem("language","english");
+    //         location.reload();
+    //     }
+    //     else {
+    //         localStorage.setItem("language","russian");
+    //         location.reload();
+    //     }
+    // });
+
+    // $( ".language-short" ).click(function() {
+    //     if (localStorage.getItem("language") == 'russian' || localStorage.getItem("language") == null) {
+    //         localStorage.setItem("language","english");
+    //         location.reload();
+    //     }
+    //     else {
+    //         localStorage.setItem("language","russian");
+    //         location.reload();
+    //     }
+    // });
+    
+    // let a = location.pathname.split('/').slice(-1)[0];
+    // if (localStorage.getItem("language") == 'english') {
+    //     switch (a) {
+    //         case 'index.html':
+    //             indexChangeLanguage();
+    //             break;
+    //         case 'mission.html':
+    //             missionChangeLanguage();
+    //             break;
+    //         default:
+                
+    //         }
+    // }
+
+    console.log(sessionStorage.getItem("language"));
     console.log(location.pathname.split('/').slice(-1)[0]);
 
     $( ".language" ).click(function() {
-        if (localStorage.getItem("language") == 'russian' || localStorage.getItem("language") == null) {
-            localStorage.setItem("language","english");
+        if (sessionStorage.getItem("language") == 'russian' || sessionStorage.getItem("language") == null) {
+            sessionStorage.setItem("language","english");
             location.reload();
         }
         else {
-            localStorage.setItem("language","russian");
+            sessionStorage.setItem("language","russian");
             location.reload();
         }
     });
 
     $( ".language-short" ).click(function() {
-        if (localStorage.getItem("language") == 'russian' || localStorage.getItem("language") == null) {
-            localStorage.setItem("language","english");
+        if (sessionStorage.getItem("language") == 'russian' || sessionStorage.getItem("language") == null) {
+            sessionStorage.setItem("language","english");
             location.reload();
         }
         else {
@@ -42,7 +81,7 @@ $(document).ready(function(){
     });
     
     let a = location.pathname.split('/').slice(-1)[0];
-    if (localStorage.getItem("language") == 'english') {
+    if (sessionStorage.getItem("language") == 'english') {
         switch (a) {
             case 'index.html':
                 indexChangeLanguage();
