@@ -1,15 +1,28 @@
-.male {
+.clothes {
     display: flex;
     flex-wrap: wrap;
 }
 
 
 
+
+
+
+
 .item {
-    /* flex-basis: calc(100%/3); */
-    flex-basis: 33%;
-    height: 20em;
     position: relative;
+    flex-basis: calc(100%/3);
+    padding-top: 40%;
+    
+}
+
+.item-content {
+    position: absolute;
+    top:    0;
+    right:  0;
+    bottom: 0;
+    left:   0;
+    overflow: hidden;
     border-top: 1px solid var(--light);
     border-bottom: 1px solid var(--light);
     background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
@@ -34,6 +47,7 @@
     position: absolute;
     color: var(--dark);
     height: 2em;
+    top: 0;
     width: 100%;
     box-sizing: border-box;
     font-weight: bold;
@@ -46,6 +60,7 @@
 .item .info .name {
     display: block;
     margin-bottom: .7em;
+    margin-right: .7em;
 }
 
 .item .info .cost {
@@ -62,11 +77,91 @@
 }
 
 .item:hover {
-    background-image: url('../images/hoody.png');
-    background-size: cover;
+    background-size: 70%;
+    background-repeat: no-repeat;
     background-position: center;
+    background-color: white;
+}
+
+.male .item:nth-child(1):hover {
+    background-image: url('../images/clothes/hoody.png');
+}
+
+.male .item:nth-child(2):hover {
+    background-image: url('../images/clothes/hoody.png');
+}
+
+.male .item:nth-child(4):hover {
+    background-image: url('../images/clothes/hoody.png');
+}
+
+.male .item:nth-child(5):hover {
+    background-image: url('../images/clothes/hoody.png');
+}
+
+.male .item:nth-child(6):hover {
+    background-image: url('../images/clothes/hoody.png');
+}
+
+#item-pattern {
+    background-color: var(--dark);
+    background-repeat: repeat;
 }
 
 .item:hover .info{
     opacity: 0;
+}
+
+/* .female .item-content {
+    background-position: left;
+} */
+
+/* .female .item:nth-child(4) .item-content {
+    background-image: none;
+} */
+
+
+
+@media all and (max-width: 1100px) {
+    
+    .item {
+        flex-basis: calc(100%/2);
+        padding-top: 60%;  
+    }
+
+    .item:nth-child(even) .item-content{
+        background-position: left;
+    }
+
+
+}
+
+@media all and (max-width: 700px) {
+    
+    .item {
+        font-size: 0.7em;
+    }
+
+
+}
+
+@media all and (max-width: 520px) {
+
+    .item {
+        flex-basis: 100%;
+        padding-top: 120%;  
+    }
+    .item .item-content {
+        border: 1px solid var(--light);
+        background-image: none;
+    }
+
+    .item:nth-child(2) .title {
+        display: none;
+    }
+
+    .item .info {
+        bottom: 1em;
+        left: 0.7em;
+    }
 }
