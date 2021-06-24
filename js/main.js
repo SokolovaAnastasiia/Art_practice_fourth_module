@@ -274,6 +274,13 @@ $(document).ready(function(){
         { position: 'Руководитель лаборатории' , city:'Москва', time:'Частичная' },
         { position: 'Авиаконструктор' , city:'Москва', time:'Частичная' },
     ];
+
+
+    let result = JSON.stringify(alasql('SELECT * FROM ?',[data]));
+    for (let i = 0; i < JSON.parse(result).length; i++) {
+        $('.table').append('<div class="job"><div class="position">'+ JSON.parse(result)[i].position + '</div><div class="city">' + JSON.parse(result)[i].city + '</div><div class="time">' + JSON.parse(result)[i].time + '</div></div>');
+    }
+    
     
 
     $( ".selectors>label" ).click(function() {
