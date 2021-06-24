@@ -1,0 +1,278 @@
+.career {
+    display: flex;
+}
+
+.career .info-and-table {
+    flex-grow: 1;
+    
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
+    background-position: left;
+    background-size: 0.07em 1.1em;
+    background-repeat: repeat-y;
+}
+
+.info {
+    padding: 1em 1em 4em;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+.info .title {
+    background-color: var(--light);
+    color: var(--dark);
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.1em 0.2em;
+}
+.info .description {
+    margin-right: 1em;
+    margin-top: 1em;
+    max-width: 31em;
+}
+
+
+
+
+.career .pattern {
+    flex-basis: 31%;
+    background-image: url('../images/career-pattern.svg');
+    background-size: 100%;
+    background-position:bottom right;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5em;
+}
+
+.table .job {
+    display: flex;
+    padding: 0.5em 1em 0.3em;
+    min-width: 30em;
+}
+
+.job:not(.table-header):hover {
+    background-color: var(--light);
+    color: var(--dark);
+    font-weight: bold;
+}
+
+.table-header {
+    border-top: 1px solid var(--light);
+    border-bottom: 1px solid var(--light);
+    padding: 0.5em 1em !important;
+}
+
+.table .position {
+    flex-basis: 45%;
+}
+
+.table .city {
+    flex-basis: 30%;
+}
+
+.table .time {
+    flex-basis: 25%;
+}
+
+
+.career-tablet {
+    display: none;
+}
+
+
+.career-tablet .pattern {
+    flex-basis: 31%;
+    background-image: url('../images/career-pattern.svg');
+    background-size: 100%;
+    background-position:bottom right;
+}
+
+.career-tablet .info {
+    
+    flex-direction: column;
+    background-image: linear-gradient(rgb(255, 255, 255) 33%, rgba(255,255,255,0) 0%);
+    background-position: left;
+    background-size: 0.07em 1.1em;
+    background-repeat: repeat-y;
+}
+
+.table-tablet {
+    display: none;
+}
+
+.selectors {
+    margin: 1em 0;
+    display: none;
+}
+
+.selector {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    
+}
+
+.selector span {
+    font-size: 0.7em;
+    display: inline-block;
+}
+
+.selectors>label {
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+label.dropdown select {
+    padding: 10px 42px 10px 10px;
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'Consolas';
+    border: 1px solid var(--light);
+    border-radius: 0;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+   }
+   label.dropdown select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #444;
+   }
+   label.dropdown select::-ms-expand {
+    display: none;
+   }
+   label.dropdown { position: relative; }
+   label.dropdown:after {
+    content: '>';
+    font: 16px Consolas, monospace;
+    color: var(--light);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 2px;
+    top: 6px;
+    border-bottom: 1px solid #aaa;
+    position: absolute;
+    pointer-events: none;
+    width: 35px;
+    padding: 0 0 5px 0;
+    text-indent: 14px;
+   }
+
+   label.dropdown option {
+       min-height: 1em;
+   }
+   @media screen\0 {
+    label.dropdown:after {
+    width: 38px;
+    text-indent: 15px;
+    right: 0;
+    }
+   }
+   @media screen and (min--moz-device-pixel-ratio:0) {
+    label.dropdown select { padding-right: 40px; }
+    label.dropdown:before { right: 6px; }
+    label.dropdown:after {
+    text-indent: 14px;
+    right: 6px;
+    top: -5px;
+    width: 36px;
+    }
+   }
+   .career-cards {
+       display: none;
+   }
+
+
+   .career-cards .card{
+       font-size: 0.7em;
+        border: 1px solid var(--light);
+        padding: .7em;
+   }
+
+   .career-cards .card p {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 0.2em;
+    }
+
+    .city {
+        float: right;
+    }
+
+    .card:hover {
+        background-color: var(--light);
+        color: var(--dark);
+    }
+
+
+
+
+
+@media all and (max-width: 1230px) {
+    .career {
+        display: none;
+    }
+
+    .career-tablet {
+        display: flex;
+    }
+
+    .table .job {
+        padding: 0.5em 0em 0.2em;
+    }
+    .table-header {
+        padding: 0.5em 0em !important;
+    }
+    .table-tablet {
+        display: flex;
+    }
+}
+
+@media all and (max-width: 845px) {
+    .table-tablet {
+        font-size: 0.7em;
+    }
+    .career-tablet {
+        font-size: 0.7em;
+    }
+    .table .job {
+        min-width: 32em;
+    }
+
+    .career-tablet {
+        font-size: 0.7em;
+        flex-direction: column-reverse;
+    }
+    
+    .career-tablet .pattern {
+        flex-basis: 7em;
+        background-size: 41%;
+        border-bottom: 1px solid var(--light);
+    }
+    .career-tablet .info {
+        background-image: none;
+        border-bottom: 1px solid var(--light);
+        padding: 1em 0em 2em;
+    }
+}
+
+@media all and (max-width: 625px) {
+    .table-tablet {
+        display: none;
+    }
+    .selectors {
+        display: block;
+    }
+
+    .career-cards {
+        display: block;
+    }
+}

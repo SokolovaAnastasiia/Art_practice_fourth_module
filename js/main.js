@@ -1,63 +1,9 @@
 
-// $('.fixed-menu').on('click', function(){
-//     $('.dropdown-content').css('display','block');
-//     alert('helo');
-// });
-// $('body').not('.fixed-menu').on('click',function(){
-//     $('.dropdown-content').css('display','none');
-// })
-
-
-
-
-
 
 
 $(document).ready(function(){
 
-    // localStorage.setItem("language","russian");
-    // console.log(localStorage.getItem("language"));
-    // console.log(location.pathname.split('/').slice(-1)[0]);
 
-    // $( ".language" ).click(function() {
-    //     if (localStorage.getItem("language") == 'russian' || localStorage.getItem("language") == null) {
-    //         localStorage.setItem("language","english");
-    //         location.reload();
-    //     }
-    //     else {
-    //         localStorage.setItem("language","russian");
-    //         location.reload();
-    //     }
-    // });
-
-    // $( ".language-short" ).click(function() {
-    //     if (localStorage.getItem("language") == 'russian' || localStorage.getItem("language") == null) {
-    //         localStorage.setItem("language","english");
-    //         location.reload();
-    //     }
-    //     else {
-    //         localStorage.setItem("language","russian");
-    //         location.reload();
-    //     }
-    // });
-    
-    // let a = location.pathname.split('/').slice(-1)[0];
-    // if (localStorage.getItem("language") == 'english') {
-    //     switch (a) {
-    //         case 'index.html':
-    //             indexChangeLanguage();
-    //             break;
-    //         case 'mission.html':
-    //             missionChangeLanguage();
-    //             break;
-    //         default:
-                
-    //         }
-    // }
-
-    console.log(sessionStorage.getItem("language"));
-    console.log(location.pathname.split('/').slice(-1)[0]);
-    console.log(typeof(location.pathname.split('/').slice(-1)[0]));
 
     let a = '';
     a += location.pathname.split('/').slice(-1)[0];
@@ -78,6 +24,7 @@ $(document).ready(function(){
                 break;
             default:
                 indexChangeLanguage();
+                break;
             }
     }
 
@@ -315,10 +262,91 @@ $(document).ready(function(){
 
 
 
+    let data = [
+        { position: 'Инженер-электротехник' , city:'Москва', time:'Полная' },
+        { position: 'Авиаконструктор' , city:'Санкт-Петербург', time:'Полная' },
+        { position: 'Инженер-электротехник' , city:'Москва', time:'Полная' },
+        { position: 'Авиаконструктор' , city:'Москва', time:'Полная' },
+        { position: 'Авиаконструктор' , city:'Москва', time:'Частичная' },
+        { position: 'Инженер-электротехник' , city:'Новосибирск', time:'Полная' },
+        { position: 'Руководитель лаборатории' , city:'Москва', time:'Полная' },
+        { position: 'Инженер-электротехник' , city:'Москва', time:'Полная' },
+        { position: 'Руководитель лаборатории' , city:'Москва', time:'Частичная' },
+        { position: 'Авиаконструктор' , city:'Москва', time:'Частичная' },
+    ];
+    
+
+    $( ".selectors>label" ).click(function() {
+        let query = "SELECT * FROM ? WHERE ";
+        let position = $( "#position option:selected" ).index();
+        switch (position) {
+            case 0:
+                query+= "position IS NOT NULL AND ";
+                break;
+            case 1:
+                query+= "position = 'Инженер-электротехник' AND ";
+                break;
+            case 2:
+                query+= "position = 'Руководитель лаборатории' AND ";
+                break;
+            case 3:
+                query+= "position = 'Авиаконструктор' AND ";
+                break;
+        }
+        let city = $( "#city option:selected" ).index();
+        switch (city) {
+            case 0:
+                query+= "city IS NOT NULL AND ";
+                break;
+            case 1:
+                query+= "city = 'Москва' AND ";
+                break;
+            case 2:
+                query+= "city = 'Санкт-Петербург' AND ";
+                break;
+            case 3:
+                query+= "city = 'Новосибирск' AND ";
+                break;
+        }
+        let time = $( "#time option:selected" ).index();
+        switch (time) {
+            case 0:
+                query+= "time IS NOT NULL";
+                break;
+            case 1:
+                query+= "time = 'Полная'";
+                break;
+            case 2:
+                query+= "time = 'Частичная'";
+                break;
+        }
+
+        let result = JSON.stringify(alasql(query,[data]));
+        console.log(query);
+
+        $('.career-cards .card').remove();
+
+        for (let i = 0; i < JSON.parse(result).length; i++) {
+            $('.terminal').append('<p class="prompt">' + "Неверный ввод" + '</p><p class="prompt output new-output"></p>');
+            $('.career-cards').append('<div class="card"><p class="position">'+ JSON.parse(result)[i].position +'</p><span class="time">'+ JSON.parse(result)[i].time + '</span><span class="city">' + JSON.parse(result)[i].city+ '</span>');
+        }
+        // console.log(position + ' ' + city + ' ' + time);
+        // console.log(query);
+    });
+
+    
+
+
+
+    
 
 
 
 
+
+
+        // let query = "SELECT * FROM ? WHERE position IS NOT NULL AND city IS NOT NULL AND time IS NOT NULL";
+        
 
 
 
