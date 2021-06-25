@@ -32,6 +32,9 @@ $(document).ready(function(){
             case 'career.html':
                 careerChangeLanguage();
                 break;
+            case 'shop.html':
+                shopChangeLanguage();
+                break;
             default:
                 indexChangeLanguage();
                 break;

@@ -72,3 +72,11 @@ function careerChangeLanguage() {
     $('.table-header .city').html('CITY');
     $('.table-header .time').html('TIME');
 }
+
+function shopChangeLanguage() {
+    $('.male .item .title').html("MEN'S CLOTHING");
+    $('.male .item:nth-child(2) .title').html('');
+    
+    $('.male .item:nth-child(1) .info .name').html('T-shirt Rosmars');
+    $('.male .item:nth-child(2) .info .name').html('Hoody Rosmars');
+}

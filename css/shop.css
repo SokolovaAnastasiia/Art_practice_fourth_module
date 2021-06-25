@@ -84,7 +84,7 @@
 }
 
 .male .item:nth-child(1):hover {
-    background-image: url('../images/clothes/hoody.png');
+    background-image: url('../images/clothes/t-shirt.jpg');
 }
 
 .male .item:nth-child(2):hover {
@@ -92,7 +92,7 @@
 }
 
 .male .item:nth-child(4):hover {
-    background-image: url('../images/clothes/hoody.png');
+    background-image: url('../images/clothes/t-shirt-2.png');
 }
 
 .male .item:nth-child(5):hover {
@@ -100,7 +100,28 @@
 }
 
 .male .item:nth-child(6):hover {
+    background-image: url('../images/clothes/t-shirt-3.png');
+}
+
+
+.female .item:nth-child(1):hover {
+    background-image: url('../images/clothes/fem-t-shirt.jpg');
+}
+
+.female .item:nth-child(2):hover {
     background-image: url('../images/clothes/hoody.png');
+}
+
+.female .item:nth-child(4):hover {
+    background-image: url('../images/clothes/fem-t-shirt-2.jpg');
+}
+
+.female .item:nth-child(5):hover {
+    background-image: url('../images/clothes/hoody.png');
+}
+
+.female .item:nth-child(6):hover {
+    background-image: url('../images/clothes/t-shirt-3.png');
 }
 
 #item-pattern {
