@@ -60,7 +60,7 @@ $(document).ready(function(){
     }
 
     function indexChangeLanguage() {
-        
+        $('.menu li:first-child a').html('> MAIN');
 
         $('.language').html('Русский');
         $('.language-short').html('Рус');
