@@ -262,18 +262,39 @@ $(document).ready(function(){
 
 
 
-    let data = [
-        { position: 'Инженер-электротехник' , city:'Москва', time:'Полная' },
-        { position: 'Авиаконструктор' , city:'Санкт-Петербург', time:'Полная' },
-        { position: 'Инженер-электротехник' , city:'Москва', time:'Полная' },
-        { position: 'Авиаконструктор' , city:'Москва', time:'Полная' },
-        { position: 'Авиаконструктор' , city:'Москва', time:'Частичная' },
-        { position: 'Инженер-электротехник' , city:'Новосибирск', time:'Полная' },
-        { position: 'Руководитель лаборатории' , city:'Москва', time:'Полная' },
-        { position: 'Инженер-электротехник' , city:'Москва', time:'Полная' },
-        { position: 'Руководитель лаборатории' , city:'Москва', time:'Частичная' },
-        { position: 'Авиаконструктор' , city:'Москва', time:'Частичная' },
-    ];
+    let data;
+
+    if (sessionStorage.getItem("language") == 'english') {
+        data = [
+            { position: 'Electrical engineer' , city:'Moscow', time:'Full-time' },
+            { position: 'Aircraft designer' , city:'Saint Petersburg', time:'Full-time' },
+            { position: 'Electrical engineer' , city:'Moscow', time:'Full-time' },
+            { position: 'Aircraft designer' , city:'Moscow', time:'Full-time' },
+            { position: 'Aircraft designer' , city:'Moscow', time:'Part-time' },
+            { position: 'Electrical engineer' , city:'Novosibirsk', time:'Full-time' },
+            { position: 'Laboratory manager' , city:'Moscow', time:'Full-time' },
+            { position: 'Electrical engineer' , city:'Moscow', time:'Full-time' },
+            { position: 'Laboratory manager' , city:'Moscow', time:'Part-time' },
+            { position: 'Aircraft designer' , city:'Moscow', time:'Part-time' },
+        ];
+    }
+    else {
+        data = [
+            { position: 'Инженер-электротехник' , city:'Москва', time:'Полная' },
+            { position: 'Авиаконструктор' , city:'Санкт-Петербург', time:'Полная' },
+            { position: 'Инженер-электротехник' , city:'Москва', time:'Полная' },
+            { position: 'Авиаконструктор' , city:'Москва', time:'Полная' },
+            { position: 'Авиаконструктор' , city:'Москва', time:'Частичная' },
+            { position: 'Инженер-электротехник' , city:'Новосибирск', time:'Полная' },
+            { position: 'Руководитель лаборатории' , city:'Москва', time:'Полная' },
+            { position: 'Инженер-электротехник' , city:'Москва', time:'Полная' },
+            { position: 'Руководитель лаборатории' , city:'Москва', time:'Частичная' },
+            { position: 'Авиаконструктор' , city:'Москва', time:'Частичная' },
+        ];
+    }
+
+
+    
 
 
     let result = JSON.stringify(alasql('SELECT * FROM ?',[data]));
@@ -286,47 +307,91 @@ $(document).ready(function(){
     $( ".selectors>label" ).click(function() {
         let query = "SELECT * FROM ? WHERE ";
         let position = $( "#position option:selected" ).index();
-        switch (position) {
-            case 0:
-                query+= "position IS NOT NULL AND ";
-                break;
-            case 1:
-                query+= "position = 'Инженер-электротехник' AND ";
-                break;
-            case 2:
-                query+= "position = 'Руководитель лаборатории' AND ";
-                break;
-            case 3:
-                query+= "position = 'Авиаконструктор' AND ";
-                break;
-        }
         let city = $( "#city option:selected" ).index();
-        switch (city) {
-            case 0:
-                query+= "city IS NOT NULL AND ";
-                break;
-            case 1:
-                query+= "city = 'Москва' AND ";
-                break;
-            case 2:
-                query+= "city = 'Санкт-Петербург' AND ";
-                break;
-            case 3:
-                query+= "city = 'Новосибирск' AND ";
-                break;
-        }
         let time = $( "#time option:selected" ).index();
-        switch (time) {
-            case 0:
-                query+= "time IS NOT NULL";
-                break;
-            case 1:
-                query+= "time = 'Полная'";
-                break;
-            case 2:
-                query+= "time = 'Частичная'";
-                break;
+        if (sessionStorage.getItem("language") == 'english') {
+            switch (position) {
+                case 0:
+                    query+= "position IS NOT NULL AND ";
+                    break;
+                case 1:
+                    query+= "position = 'Electrical engineer' AND ";
+                    break;
+                case 2:
+                    query+= "position = 'Laboratory manager' AND ";
+                    break;
+                case 3:
+                    query+= "position = 'Aircraft designer' AND ";
+                    break;
+            }
+            switch (city) {
+                case 0:
+                    query+= "city IS NOT NULL AND ";
+                    break;
+                case 1:
+                    query+= "city = 'Moscow' AND ";
+                    break;
+                case 2:
+                    query+= "city = 'Saint Petersburg' AND ";
+                    break;
+                case 3:
+                    query+= "city = 'Novosibirsk' AND ";
+                    break;
+            }
+            switch (time) {
+                case 0:
+                    query+= "time IS NOT NULL";
+                    break;
+                case 1:
+                    query+= "time = 'Full-time'";
+                    break;
+                case 2:
+                    query+= "time = 'Part-time'";
+                    break;
+            }
         }
+        else {
+            switch (position) {
+                case 0:
+                    query+= "position IS NOT NULL AND ";
+                    break;
+                case 1:
+                    query+= "position = 'Инженер-электротехник' AND ";
+                    break;
+                case 2:
+                    query+= "position = 'Руководитель лаборатории' AND ";
+                    break;
+                case 3:
+                    query+= "position = 'Авиаконструктор' AND ";
+                    break;
+            }
+            switch (city) {
+                case 0:
+                    query+= "city IS NOT NULL AND ";
+                    break;
+                case 1:
+                    query+= "city = 'Москва' AND ";
+                    break;
+                case 2:
+                    query+= "city = 'Санкт-Петербург' AND ";
+                    break;
+                case 3:
+                    query+= "city = 'Новосибирск' AND ";
+                    break;
+            }
+            switch (time) {
+                case 0:
+                    query+= "time IS NOT NULL";
+                    break;
+                case 1:
+                    query+= "time = 'Полная'";
+                    break;
+                case 2:
+                    query+= "time = 'Частичная'";
+                    break;
+            }
+        }
+        
 
         let result = JSON.stringify(alasql(query,[data]));
         console.log(query);
