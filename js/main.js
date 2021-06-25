@@ -13,7 +13,9 @@ $(document).ready(function(){
         $('.menu li:nth-child(2) a').html('MISSION');
         $('.menu li:nth-child(3) a').html('CAREER');
         $('.menu li:last-child a').html('SHOP');
-        
+
+        $('.footer .contacts').html('telegram: @rosmars<br>vk: vk.com/rosmars-champion<br>email: rosmars@mail.com<br>phone: +7(916)111-22-33<br>');
+        $('.footer .signature').html('Rosmars, 2035');
 
         switch (a) {
             case 'index.html':
@@ -52,28 +54,6 @@ $(document).ready(function(){
     });
     
     
-    
-
-    function missionChangeLanguage(){
-        $('.menu li:nth-child(2) a').html('> MISSION');
-        $('.mission .title').html('First colony at Mars');
-        $('.mission .info .description').html('In 2041, the first manned flight to Mars is planned with the aim of creating an autonomous viable colony.');
-    }
-
-    function indexChangeLanguage() {
-        $('.menu li:first-child a').html('> MAIN');
-
-        $('.language').html('Русский');
-        $('.language-short').html('Рус');
-        $('.header .message').html('We fly to Mars and look for good people with us');
-        
-        
-
-        $('.qualifying-stage .title').html('FIRST QUALIFICATION STAGE');
-        $('.qualifying-stage .info .description').html('Online testing to determine the ability to think analytically. Registration is available until March 20.');
-        $('.qualifying-stage .info a').html('Participate <span style="font-style:normal;">[Yes/No]</span>');
-    }
-
 
     $(document).scroll(function() {
         showFixedMenu();
@@ -194,7 +174,7 @@ $(document).ready(function(){
             '<p class="prompt">Вопрос 3/10<br>Может ли у океана и волос быть общее качество?</p>',
             '<p class="prompt">Вопрос 4/10<br>Возможно ли упасть в чай, но остаться сухим?</p>',
             '<p class="prompt">Вопрос 5/10<br>Вторая мировая война началась в 1941?</p>',
-            '<p class="prompt">Вопрос 6/10<br>Перун - не главный среди славянских богов?</p>',
+            '<p class="prompt">Вопрос 6/10<br>Все люди равны?</p>',
             '<p class="prompt">Вопрос 7/10<br>Георг Гегель понимает судьективность в смысле толерантности. Так ли это?</p>',
             '<p class="prompt">Вопрос 8/10<br>Кибернетическая утопия основана на обработке альтернативных типов энергии?</p>',
             '<p class="prompt">Вопрос 9/10<br>Кант ставит в центр мироздания субъект?</p>',
