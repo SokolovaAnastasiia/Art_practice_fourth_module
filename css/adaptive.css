@@ -209,12 +209,12 @@
     }
 
     .news-block-mobile .news-cards > div {
-        min-height: 9em;
+        min-height: 12em;
         padding: 1em 1em;
     }
 
     .news-block-mobile .news .news-cards .p-container {
-        height: 4em;
+        height: 7em;
     }
 
     .news-block-mobile .pattern:before {

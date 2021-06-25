@@ -59,4 +59,16 @@ function missionChangeLanguage(){
 
     $('.simulator .info .title, .tour .info .title').html('CONTROL PANEL SIMULATOR');
     $('.simulator .info .information p, .tour .info .information p').html('Try to fly the spaceship manually');
+    $('.simulator .info .information p, .tour .info .information a').html('Try it [Yes/No]');
+}
+
+function careerChangeLanguage() {
+
+    $('.career .info .title').html('OPEN POSITIONS');
+    $('.career .info .description').html('If you already have the necessary skills to start work, send us your resume and we will get in touch.');
+    $('.career-tablet .info .title').html('OPEN POSITIONS');
+    $('.career-tablet .info .description').html('If you already have the necessary skills to start work, send us your resume and we will get in touch.');
+    $('.table-header .position').html('POSITION');
+    $('.table-header .city').html('CITY');
+    $('.table-header .time').html('TIME');
 }

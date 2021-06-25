@@ -8,6 +8,10 @@ $(document).ready(function(){
     let a = '';
     a += location.pathname.split('/').slice(-1)[0];
     if (sessionStorage.getItem("language") == 'english') {
+        $('.fixed-menu ul li:nth-child(1) a').html('MAIN');
+        $('.fixed-menu ul li:nth-child(2) a').html('MISSION');
+        $('.fixed-menu ul li:nth-child(3) a').html('CAREER');
+        $('.fixed-menu ul li:nth-child(4) a').html('SHOP');
 
         $('.menu li:first-child a').html('MAIN');
         $('.menu li:nth-child(2) a').html('MISSION');
@@ -24,6 +28,9 @@ $(document).ready(function(){
                 break;
             case 'mission.html':
                 missionChangeLanguage();
+                break;
+            case 'career.html':
+                careerChangeLanguage();
                 break;
             default:
                 indexChangeLanguage();
