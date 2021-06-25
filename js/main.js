@@ -13,6 +13,7 @@ $(document).ready(function(){
         $('.menu li:nth-child(2) a').html('MISSION');
         $('.menu li:nth-child(3) a').html('CAREER');
         $('.menu li:last-child a').html('SHOP');
+        
 
         switch (a) {
             case 'index.html':
